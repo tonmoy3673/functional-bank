@@ -14,12 +14,17 @@ textElement('balance');
 // ================= getInputElementValue===============//
 
 const getInputValue=(inputID)=>{
-    const inputValue=document.getElementById(inputID);
-    const inputParse=inputValue.value;
-    const input=parseFloat(inputParse);
+  const inputValue=document.getElementById(inputID);
+  const inputParse=inputValue.value;
+  const input=parseFloat(inputParse);
+  if (!isNaN(input)) {
     inputValue.value='';
-    return input;
-
+   return input;
+  } else {
+    window.alert('Please Input Valid Amount!!');
+    return 0;
+  }
+  
 };
 
 
@@ -39,16 +44,23 @@ document.getElementById('deposit-btn').addEventListener('click',function(){
 
 // ================ Set Withdraw ===============//
 document.getElementById('withdraw-btn').addEventListener('click',function(){
+
   const newWithdrawAmount=  getInputValue('withdraw-input');
-  console.log(newWithdrawAmount);
-  const previousWithdrawAmount=textElement('withdraw');
-  console.log(previousWithdrawAmount);
-  const totalWithdraw=newWithdrawAmount+previousWithdrawAmount
-  const withdrawText=document.getElementById('withdraw');
-  withdrawText.innerText=totalWithdraw;
   const balanceValue=textElement('balance');
-  const balanceText=document.getElementById('balance');
- balanceText.innerText=balanceValue-newWithdrawAmount;
+  
+  if (balanceValue>newWithdrawAmount) {
+    const balanceText=document.getElementById('balance');
+    const withdrawText=document.getElementById('withdraw');
+    const previousWithdrawAmount=textElement('withdraw');
+    const totalWithdraw=newWithdrawAmount+previousWithdrawAmount
+    withdrawText.innerText=totalWithdraw;
+    balanceText.innerText=balanceValue-newWithdrawAmount;
+  }
+ else{
+  window.alert('Insufficient Balance!!')
+ }
+
+ 
 });
 
 
