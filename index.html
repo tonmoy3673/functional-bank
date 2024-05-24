@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title class="">Functional Bank</title>
+    <title class="">🏦 Functional Bank</title>
   </head>
   <body>
     <main>
-      <header class="text-center mt-8 text-4xl font-semibold text-sky-700">
-        Functional <span class="text-blue-800">Bank</span>
+      <header class="text-center mt-8 text-5xl font-bold text-sky-700">
+        🏦 Functional <span class="text-blue-800">Bank</span>
       </header>
       <section class="md:flex justify-center gap-12 py-8 mt-6">
         <div class="bg-sky-600 px-28 py-10 rounded-lg text-white">
           <h2 class="text-3xl font-semibold">Deposit</h2>
-          <p class="text-4xl mt-2">$<span>00</span></p>
+          <p class="text-4xl mt-2">$<span id="deposit">00</span></p>
         </div>
         <div class="bg-yellow-600 px-28 py-10 rounded-lg text-white">
           <h2 class="text-3xl font-semibold">Balance</h2>
-          <p class="text-4xl mt-2">$<span>00</span></p>
+          <p class="text-4xl mt-2">$<span id="balance">1200</span></p>
         </div>
         <div class="bg-green-600 px-28 py-10 rounded-lg text-white">
           <h2 class="text-3xl font-semibold">Withdraw</h2>
-          <p class="text-4xl mt-2">$<span>00</span></p>
+          <p class="text-4xl mt-2">$<span id="withdraw">00</span></p>
         </div>
       </section>
       <!-- ============= Input Section =============== -->
       <section class="md:flex justify-center gap-12">
         <!-- ================== Deposit Section ================ -->
-        <div class="bg-green-600 px-32 py-10 rounded-lg text-white">
+        <div class="bg-purple-600 px-32 py-10 rounded-lg text-white">
           <h2 class="text-2xl font-semibold mb-3">Please Deposit</h2>
           <input
+            id="deposit-input"
             class="p-1 text-black rounded-md"
             type="text"
             placeholder="Input Deposit Amount"
@@ -44,9 +45,10 @@
         </div>
 
         <!-- ========================= Withdraw Section ================== -->
-        <div class="bg-green-600 px-32 py-10 rounded-lg text-white">
+        <div class="bg-teal-600 px-32 py-10 rounded-lg text-white">
           <h2 class="text-2xl font-semibold mb-3">Please Withdraw</h2>
           <input
+            id="withdraw-input"
             class="p-1 text-black rounded-md"
             type="text"
             placeholder="Input Withdraw Amount"
