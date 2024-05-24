@@ -46,7 +46,9 @@ document.getElementById('withdraw-btn').addEventListener('click',function(){
   const totalWithdraw=newWithdrawAmount+previousWithdrawAmount
   const withdrawText=document.getElementById('withdraw');
   withdrawText.innerText=totalWithdraw;
-
+  const balanceValue=textElement('balance');
+  const balanceText=document.getElementById('balance');
+ balanceText.innerText=balanceValue-newWithdrawAmount;
 });
 
 
